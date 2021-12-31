@@ -47,3 +47,27 @@ class Solution {
         return -1;
     }
 }
+
+class Solution {
+    public int firstUniqChar(String s) {
+        //Hashmap
+        HashMap<Character, Integer> times = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            int time = times.getOrDefault(s.charAt(i), 0);
+            times.put(s.charAt(i), ++time);
+        }
+        
+        int res = -1;
+        for (int i = 0; i < s.length(); i++) {
+            if (times.get(s.charAt(i)) == 1){
+                res = i;
+                break;
+            }
+            
+        }
+        return res;
+            
+            
+        
+    }
+}
