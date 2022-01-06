@@ -37,7 +37,7 @@ class Solution {
         int left = 0;
         int right = k-1;
         List<Integer> res = new ArrayList<Integer>();
-        int curr = 0;
+        int curr = nums[0];
         int i = 0;
         if (k == 1) {
             for (int m= 0;m < nums.length; m++) {
@@ -56,7 +56,7 @@ class Solution {
         left++;
         right++;
         while (right < nums.length) {
-            curr = 0;
+            curr = nums[left];
             for (int m = left; m <= right; m++) {
                  curr = Math.max(curr, nums[m]);
             }
